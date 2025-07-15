@@ -1,0 +1,11 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Contact form configuration - automatically handles forms with data-netlify="true"
+[forms]
+  [forms.contact]
+    # Form submissions will be sent to the email configured in Netlify

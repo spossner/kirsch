@@ -1,16 +1,122 @@
 ---
-
+import '../styles/global.css';
 ---
 
-<html lang="en">
+<html lang="de">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Coaching & Beratung - Baue Dein Leben neu auf</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-gray-50 font-sans">
+		<!-- Hero Section -->
+		<section class="min-h-screen bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center px-4">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6 transition-all duration-1000 ease-out">
+					Baue Dein Leben mit <span class="text-purple-600">Selbstvertrauen</span> neu auf
+				</h1>
+				<p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+					Spezialisiertes Coaching für Frauen, die nach einer Trennung, Scheidung oder familiären Veränderungen einen Neuanfang wagen. 
+					Du bist nicht allein auf diesem Weg.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<button class="bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+						Starte Deine Reise
+					</button>
+					<button class="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transform hover:scale-105 transition-all duration-300">
+						Mehr erfahren
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="py-20 bg-white">
+			<div class="max-w-6xl mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Wie ich Dir helfen kann</h2>
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+						<div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-800 mb-3">Emotionale Unterstützung</h3>
+						<p class="text-gray-600">Bewältige die emotionalen Herausforderungen einer Trennung und baue Dein Selbstvertrauen wieder auf.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+						<div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-800 mb-3">Praktische Begleitung</h3>
+						<p class="text-gray-600">Erhalte konkrete Strategien für die Bewältigung des Alltags, Finanzen und neue Routinen.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+						<div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-800 mb-3">Persönliche Entwicklung</h3>
+						<p class="text-gray-600">Entdecke Deine Stärken und gestalte ein erfülltes neues Kapitel in Deinem Leben.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section class="py-20 bg-gray-50">
+			<div class="max-w-4xl mx-auto px-4 text-center">
+				<h2 class="text-4xl font-bold text-gray-800 mb-8">Du musst diesen Weg nicht allein gehen</h2>
+				<p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+					Ich verstehe die besonderen Herausforderungen, denen Frauen bei wichtigen Lebenswenden gegenüberstehen. 
+					Nachdem ich unzählige Frauen durch ähnliche Situationen begleitet habe, biete ich Dir einen sicheren, 
+					urteilsfreien Raum, in dem Du Deine Gefühle verarbeiten und Deine nächsten Schritte planen kannst.
+				</p>
+				<div class="bg-white p-8 rounded-lg shadow-lg">
+					<blockquote class="text-xl italic text-gray-700 mb-4">
+						"Die Reise von tausend Meilen beginnt mit einem einzigen Schritt. Lass mich Dir helfen, diesen ersten Schritt mit Vertrauen zu gehen."
+					</blockquote>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="py-20 bg-white">
+			<div class="max-w-2xl mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Bereit, Deine Reise zu beginnen?</h2>
+				<p class="text-center text-gray-600 mb-8">
+					Mach den ersten Schritt zum Neuaufbau Deines Lebens. Ich bin hier, um Dich auf jedem Schritt zu begleiten.
+				</p>
+				<form class="space-y-6" name="contact" method="POST" data-netlify="true">
+					<div>
+						<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+						<input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200">
+					</div>
+					<div>
+						<label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail</label>
+						<input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200">
+					</div>
+					<div>
+						<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Erzähl mir von Deiner Situation</label>
+						<textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"></textarea>
+					</div>
+					<button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+						Nachricht senden
+					</button>
+				</form>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-gray-800 text-white py-8">
+			<div class="max-w-4xl mx-auto px-4 text-center">
+				<p class="text-gray-400">© 2024 Coaching & Beratung. Alle Rechte vorbehalten.</p>
+			</div>
+		</footer>
 	</body>
 </html>
