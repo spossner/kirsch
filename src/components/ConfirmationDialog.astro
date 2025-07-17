@@ -1,0 +1,24 @@
+---
+// ConfirmationDialog.astro - Confirmation dialog component
+---
+
+<div id="confirmation-dialog" class="fixed inset-0 bg-black/75 flex items-center justify-center z-50 hidden">
+	<div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6 transform transition-all duration-300 scale-95">
+		<div class="text-center">
+			<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+				<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+				</svg>
+			</div>
+			<h3 class="text-2xl font-normal text-gray-800 mb-3" style="font-family: 'EB Garamond', serif;">
+				Deine Reise beginnt jetzt!
+			</h3>
+			<p class="text-base text-gray-600 mb-6">
+				Vielen Dank für Deine Nachricht. Ich melde mich ganz bald bei Dir, um gemeinsam den ersten Schritt in Dein neues Leben zu gehen.
+			</p>
+			<button id="close-dialog" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-700 transition-all duration-300">
+				Bis dahin
+			</button>
+		</div>
+	</div>
+</div>
