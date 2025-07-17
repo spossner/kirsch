@@ -153,8 +153,109 @@ import '../styles/global.css';
 		<!-- Footer -->
 		<footer class="bg-gray-800 text-white py-8">
 			<div class="max-w-4xl mx-auto px-4 text-center">
-				<p class="text-gray-400">© 2024 Coaching & Beratung. Alle Rechte vorbehalten.</p>
+				<p class="text-gray-400">© 2025 Kirsch-Coaching. Alle Rechte vorbehalten.</p>
 			</div>
 		</footer>
+
+		<!-- Confirmation Dialog -->
+		<div id="confirmation-dialog" class="fixed inset-0 bg-black/75 flex items-center justify-center z-50 hidden">
+			<div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6 transform transition-all duration-300 scale-95">
+				<div class="text-center">
+					<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+					</div>
+					<h3 class="text-2xl font-normal text-gray-800 mb-3" style="font-family: 'EB Garamond', serif;">
+						Deine Reise beginnt jetzt!
+					</h3>
+					<p class="text-base text-gray-600 mb-6">
+						Vielen Dank für Deine Nachricht. Ich melde mich ganz bald bei Dir, um gemeinsam den ersten Schritt in Dein neues Leben zu gehen.
+					</p>
+					<button id="close-dialog" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-700 transition-all duration-300">
+						Bis dahin
+					</button>
+				</div>
+			</div>
+		</div>
+		<script>
+			const showDialog = () => {
+				const dialog = document.getElementById("confirmation-dialog") as HTMLElement;
+				if (dialog) {
+					dialog.classList.remove("hidden");
+					const dialogContent = dialog.querySelector(".transform") as HTMLElement;
+					if (dialogContent) {
+						dialogContent.classList.remove("scale-95");
+						dialogContent.classList.add("scale-100");
+					}
+				}
+			};
+
+			const hideDialog = () => {
+				const dialog = document.getElementById("confirmation-dialog") as HTMLElement;
+				if (dialog) {
+					const dialogContent = dialog.querySelector(".transform") as HTMLElement;
+					if (dialogContent) {
+						dialogContent.classList.remove("scale-100");
+						dialogContent.classList.add("scale-95");
+					}
+					
+					setTimeout(() => {
+						dialog.classList.add("hidden");
+					}, 300);
+				}
+			};
+
+			const handleSubmit = (evt: Event) => {
+				evt.preventDefault();
+
+				const myForm = evt.target as HTMLFormElement;
+				if (!myForm || !(myForm instanceof HTMLFormElement)) {
+					console.error("Contact form not found");
+					return;
+				}
+				
+				const formData = new FormData(myForm);
+
+				fetch("/", {
+					method: "POST",
+					headers: { "Content-Type": "application/x-www-form-urlencoded" },
+					body: new URLSearchParams(formData as any).toString()
+				})
+					.then(() => {
+						console.log("Form successfully submitted");
+						showDialog();
+						myForm.reset();
+					})
+					.catch((error: Error) => {
+						console.error("Form submission error:", error);
+						alert("Es gab einen Fehler beim Senden Deiner Nachricht. Bitte versuche es erneut.");
+					});
+			};
+
+			// Initialize form handler
+			const form = document.querySelector("form[name='contact']") as HTMLFormElement;
+			if (form) {
+				form.addEventListener("submit", handleSubmit);
+			} else {
+				console.error("Contact form not found");
+			}
+
+			// Initialize dialog close handler
+			const closeButton = document.getElementById("close-dialog") as HTMLButtonElement;
+			if (closeButton) {
+				closeButton.addEventListener("click", hideDialog);
+			}
+
+			// Close dialog when clicking outside
+			const dialog = document.getElementById("confirmation-dialog") as HTMLElement;
+			if (dialog) {
+				dialog.addEventListener("click", (e: Event) => {
+					if (e.target === dialog) {
+						hideDialog();
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
