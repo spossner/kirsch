@@ -1,21 +1,67 @@
-## 🚀 Project Structure
+# 🌟 Coaching Website - Sandra Müller
 
-Inside of your Astro project, you'll see the following folders and files:
+A professional coaching website built with Astro, featuring a modern component-based architecture and TypeScript form handling.
+
+## 🚀 Project Structure
 
 ```text
 /
 ├── public/
+│   └── images/
+│       └── female.webp              # Hero background image
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/                  # Reusable Astro components
+│   │   ├── HeroSection.astro        # Hero section with background image
+│   │   ├── ServicesSection.astro    # Services grid (3 service cards)
+│   │   ├── CoachProfile.astro       # Coach profile with image and bio
+│   │   ├── AboutSection.astro       # About section with quote
+│   │   ├── ContactForm.astro        # Contact form (Netlify Forms)
+│   │   ├── ConfirmationDialog.astro # Success dialog overlay
+│   │   └── Footer.astro             # Site footer
+│   ├── pages/
+│   │   └── index.astro              # Main page (component composition)
+│   ├── scripts/
+│   │   └── contact-form.ts          # Form handling with TypeScript
+│   └── styles/
+│       └── global.css               # Global styles
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎨 Design Features
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Component-based architecture** - Clean separation of concerns
+- **TypeScript form handling** - Custom form submission with validation
+- **Netlify Forms integration** - Server-side form processing
+- **Custom confirmation dialog** - "Deine Reise beginnt jetzt!" themed success message
+- **Responsive design** - Mobile-first approach with Tailwind CSS
+- **Professional styling** - Green theme with elegant typography (EB Garamond)
+- **Background image integration** - Hero section with subtle overlay effects
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📁 Component Architecture
+
+### Core Components:
+- `HeroSection` - Full-screen hero with background image and CTAs
+- `ServicesSection` - 3-column grid showcasing coaching services
+- `CoachProfile` - Two-column layout with coach photo and bio
+- `AboutSection` - Centered content with inspirational quote
+- `ContactForm` - Netlify form with custom success dialog
+- `ConfirmationDialog` - Modal overlay for form success feedback
+- `Footer` - Simple footer with copyright
+
+### Interactive Features:
+- **Custom form submission** - Prevents default, shows loading states
+- **Success dialog** - Animated modal with "Reise beginnt" theme
+- **Keyboard accessibility** - ESC key closes dialog
+- **Click-outside handling** - Dialog closes when clicking overlay
+- **Form validation** - Required fields with focus states
+
+## 🛠️ Technical Stack
+
+- **Astro** - Static site generator with component islands
+- **TypeScript** - Type-safe form handling and interactions
+- **Tailwind CSS** - Utility-first styling framework
+- **Netlify Forms** - Server-side form processing
+- **EB Garamond** - Professional serif typography
 
 ## 🧞 Commands
 
